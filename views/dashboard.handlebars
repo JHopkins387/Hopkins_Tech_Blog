@@ -1,0 +1,48 @@
+<div class="relative flex flex-col ">
+  <div class="w-4/5 p-6 m-auto mt-10 border-black-600 rounded shadow-lg shadow-black-800/50 bg-cyan-600">
+
+    <form class="new-post-form">
+      <h2 class="text-xl font-bold">Create New Blog Post</h2>
+      <div>
+        <label for="post-title" class="block text-sm text-black">Title:</label>
+        <input type="text" id="title" name="post-title"
+          class="block w-full px-4 py-2 text-black-700 bg-white border rounded-md focus:border-black-400 focus:ring-black-300 focus:outline-none focus:ring focus:ring-opacity-40">
+
+        <label for="post-content" class="block text-sm text-black">Content</label>
+        <input id="post-content" name="post-content"
+          class="block w-full px-4 py-2 text-black-700 bg-white border rounded-md focus:border-black-400 focus:ring-black-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+
+        <button type="submit"
+          class="btn bg-slate-700 w-3/5 px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-900 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-black-600 mt-4">Create</button>
+      </div>
+    </form>
+<br>
+
+    {{!-- if user has posts, create them here --}}
+        {{#if posts.length}}
+        <section>
+          <h2 class="text-xl font-bold">Your Blog Posts</h2>
+          <ol>
+            {{#each posts as |post|}}
+            <li>
+              <article class="post">
+                <div class="block text-lg font-bold text-black bg-white border rounded-md p-3 mt-3 mb-3">
+                  <a href="/dashboard/edit/{{post.id}}">{{post.title}}</a>
+                  <div class="text-sm font-light">
+                  {{format_date created_at}}
+                </div>
+                </div>
+                
+              </article>
+            </li>
+            {{/each}}
+          </ol>
+        </section>
+        {{/if}}
+      </div>
+    </div>
+
+
+
+    
+    <script src="/javascript/create-post.js"></script>

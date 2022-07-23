@@ -1,0 +1,50 @@
+<div class="relative flex flex-col ">
+  <div class="w-3/5 p-6 m-auto mt-10 border-black-600 rounded shadow-lg shadow-black-800/50 bg-cyan-600">
+      <div class="title">
+        <h2 class="text-2xl font-bold">{{post.title}}</h2>
+         <div class="text-sm font-light">
+                Posted by {{post.user.username}} on {{format_date created_at}}
+              </div>
+      </div>
+      <div>{{post.post_content}}</div>
+</div>
+</div>
+
+
+<div class="relative flex flex-col">
+  <div class="w-3/5 p-6 m-auto mt-10 border-black-600 rounded shadow-lg shadow-black-800/50 bg-cyan-600">
+    {{#if loggedIn}}
+    <form class="comment-form">
+       <h2 class="text-2xl font-bold">Comment:</h2>
+      <div>
+        <textarea name="comment-body" id="text" class="border rounded-md w-full h-32"></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="bg-slate-700 w-1/2 px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-900 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-black-600">Submit</button>
+      </div>
+    </form>
+    {{/if}}
+
+    <div class="comments">
+      <h2 class="text-xl font-semibold mt-6">Previous Comments:</h2>
+      {{#each post.comments}}
+      <section class="border rounded-md w-full bg-white p-2 m-1">
+        <div class="font-semibold">
+          {{comment_text}}
+        </div>
+        <span class="font-light text-sm">
+          Comment by {{user.username}} on {{format_date created_at}}
+        </span>
+
+      </section>
+      {{/each}}
+    </div>
+  </div>
+  </div>
+
+
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebYtech</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style="background: linear-gradient(#eef3ed, #37226c); background-attachment: fixed; ">
+
+  <ul class="flex">
+    <li class="flex-1 mt-4 mb-2 ml-4 mr-4">
+      <a class="font-bold text-2xl text-center block rounded py-2 px-4 bg-cyan-600 shadow-lg shadow-cyan-500/50 hover:bg-red-300 text-white"
+        href="/">WEByTECH Blogsite</a>
+    </li>
+    {{#if loggedIn}}
+    <li class="flex-1 mt-4 mb-2 ml-4 mr-4">
+      <a class="font-bold text-xl text-center block rounded py-2 px-4 bg-cyan-600 shadow-lg shadow-cyan-500/50 hover:bg-red-300 text-white"
+        href="/dashboard">Dashboard</a>
+    </li>
+    <li class="flex-1 mt-4 mb-2 ml-4 mr-4">
+      <a class="font-bold text-xl text-center block rounded py-2 px-4 bg-cyan-600 shadow-lg shadow-cyan-500/50 hover:bg-red-300 text-white"
+        id="logout">Logout</a>
+    </li>
+  </ul>
+  {{else}}
+  <li class="flex-1 mt-4 mb-2 ml-4 mr-4">
+    <a class="font-bold text-xl text-center block rounded py-2 px-4 bg-cyan-600 shadow-lg shadow-cyan-500/50 hover:bg-red-300 text-white"
+      href="/login">Login</a>
+  </li>
+  </ul>
+  {{/if}}
+  </header>
+
+
+  <main>
+    {{{ body }}}
+  </main>
+
+  </div>
+
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>

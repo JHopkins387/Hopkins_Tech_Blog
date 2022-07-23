@@ -1,0 +1,27 @@
+
+<div class="relative flex flex-col ">
+  <div class="w-4/5 p-6 m-auto mt-10 border-black-600 rounded shadow-lg shadow-black-800/50 bg-cyan-600">
+<form class="edit-form">
+  <div>
+    <h1 class="text-2xl font-bold">Edit Blog Post</h1>
+    <h2 class="text-lg m-1">Title:</h2>
+    <textarea id="blog-title" class="title block w-full h-14 text-lg font-semibold text-black bg-white border rounded-md p-3 mt-1 mb-3"> {{post.title}}</textarea> 
+  </div>
+  <div>
+    <h2 class="text-lg m-1">Content:</h2>
+    <textarea id="blog-content" class="title block w-full h-30 text-lg font-semibold text-black bg-white border rounded-md p-3 mt-1 mb-3">{{post.post_content}}</textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="edit-btn g-slate-700  px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-900 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-black-600">Update Blog Post</button>
+    <br><br>
+     <button type="button" class="delete-btn bg-slate-700  px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-900 rounded-md hover:bg-red-600 focus:outline-none focus:bg-black-600">Delete</button>
+  </div>
+</form>
+</div>
+</div>
+
+
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete.js"></script>
